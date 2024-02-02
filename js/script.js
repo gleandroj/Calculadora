@@ -1,23 +1,26 @@
-function insert(num)
-{
-  var numero = document.getElementById('resultado').innerHTML;
-  document.getElementById('resultado').innerHTML = numero + num;
+const elementos = {
+    resultado: document.getElementById('resultado')
 }
 
-function clean(){
-    document.getElementById('resultado').innerHTML = "";
+const insert = (novoNumero) => {
+    const numero = elementos.resultado.innerHTML;
+    elementos.resultado.innerHTML = numero + novoNumero;
 }
 
-function back(){
-    var resultado = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+const clean = () => {
+    elementos.resultado.innerHTML = "";
 }
 
-function calcular(){
-    var resultado = document.getElementById('resultado').innerHTML;
-    if(resultado){
-        document.getElementById('resultado').innerHTML = eval(resultado);
-    }else{
-        document.getElementById('resultado').innerHTML = "Nada";
+const back = () => {
+    const resultado = elementos.resultado.innerHTML;
+    elementos.resultado.innerHTML = resultado.substring(0, resultado.length - 1);
+}
+
+const calcular = () => {
+    const resultado = elementos.resultado.innerHTML;
+    if (resultado) {
+        elementos.resultado.innerHTML = eval(resultado);
+    } else {
+        elementos.resultado.innerHTML = "Nada";
     }
 }
